@@ -1,14 +1,17 @@
-const express=require("express");
+const express = require("express");
 
-const app=express()
-app.set("view engine","ejs")
-app.use(express.static("public")) //static files
+const app = express();
+app.set("view engine", "ejs"); // Setting ejs for templates
+app.use(express.static("public")); // Adding public dir
 
-app.get("/",(req,res)=>{
-    res.render("homepage",{title:"e28886"})
+app.get("/", (req, res) => {
+  res.render("homepage");
+});
 
-})
+app.get("/login", (req, res) => {
+  res.render("login");
+});
 
-app.listen(3000,()=>{
-    console.log("server fired up")
-})
+app.listen(3000, () => {
+  console.log("Server fired up 🔥");
+});
